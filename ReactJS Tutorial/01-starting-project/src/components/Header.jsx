@@ -19,6 +19,3 @@ export default function Header() {
     </header>
   );
 }
-
-
-//Header from windows
