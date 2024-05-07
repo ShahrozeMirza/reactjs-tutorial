@@ -13,11 +13,11 @@ function App() {
     setSelectedTopic(selectedButton);
 
     //Here the old value will be shown in console because we are inside the function which has old value of selectedTopic before re-render.
-    console.log('old value inside', selectedTopic);
+    console.log('old value of selectedTopic inside i.e before re-render', selectedTopic);
 }
 
 //Here the new value will be shown in console because we are outside the function which has new value of selectedTopic after re-render.
-console.log('new value outside', selectedTopic);
+console.log('new value of selectedTopic outside i.e after re-render', selectedTopic);
 
 console.log('APP COMPONENT EXECUTING')
 
