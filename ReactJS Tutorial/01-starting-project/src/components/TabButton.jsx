@@ -12,6 +12,6 @@ of attributes, instead this children prop simply refers to the content between y
 */
 
 //With object destructuring and by pulling out the children property and storing it in its own variable we don't need to write prop.children.
-export default function TabButton({children, onSelect}) {
-    return <li><button onClick={onSelect}>{children}</button></li>;
+export default function TabButton({children, onSelect, isSelected}) {
+    return <li><button className={isSelected ? "active" : undefined} onClick={onSelect}>{children}</button></li>;
 }
