@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Player({ initialName, symbol }){
+export default function Player({ initialName, symbol, isActive, onChangeName}){
 
   const [playerName, setPlayerName] = useState(initialName);
   const [isEditing, setIsEditing] = useState(false);
@@ -15,6 +15,10 @@ export default function Player({ initialName, symbol }){
     In the function form we simply have a guarantee by react that we will be always be working with the latest available state value.
     So whenever we update the state value based on the previous state we should always go with the function form as a best practice.*/
     setIsEditing(editing => !editing);
+
+    if(isEditing){
+      onChangeName(symbol, playerName);
+    }
   }
 
   function handleChange(event) {
@@ -33,7 +37,7 @@ export default function Player({ initialName, symbol }){
   }
 
     return(
-        <li>
+        <li className={isActive ? 'active' : undefined}>
             <span className="player">
               {editablePlayerName}
               <span className="player-symbol">{symbol}</span>
